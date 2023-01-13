@@ -15,7 +15,13 @@ pipeline {
         }
         stage('build') { 
             steps { 
-                sh(script: './mvnw --batch-mode package -DskipTests')
+                sh(script: 'docker build -t appjs .')
+            }
+        }
+        
+        stage('deploy') { 
+            steps { 
+                sh(script: 'docker run -d -p 3000:3000 appjs')
             }
         }
 
