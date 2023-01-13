@@ -8,15 +8,9 @@ pipeline {
         stage('checkout')
         {
             steps{
-                git 'https://github.com/OctopusSamples/RandomQuotes-Java.git'
+                git 'https://github.com/Payam-Almasian/JenkinsRepo.git'
                 sh "ls -lah"
-                //sh "./mvnw -N wrapper:wrapper"
-            }
-        }
-        stage('test'){
-            steps {
-                sh(script: './mvnw --batch-mode -Dmaven.test.failure.ignore=true test')
-                //junit 'reports/**/*.xml' 
+
             }
         }
         stage('build') { 
