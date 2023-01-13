@@ -10,6 +10,7 @@ pipeline {
             steps{
                 git 'https://github.com/Payam-Almasian/JenkinsRepo.git'
                 sh "ls -lah"
+                sh "whoami"
 
             }
         }
