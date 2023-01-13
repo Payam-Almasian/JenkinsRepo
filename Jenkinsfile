@@ -29,7 +29,7 @@ pipeline {
 
     }
     post { 
-        always { 
+        failure { 
             junit(testResults: 'target/surefire-reports/*.xml', allowEmptyResults : true)
         }
     }
