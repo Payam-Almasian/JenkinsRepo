@@ -19,7 +19,8 @@ pipeline {
             }
         }
         
-        stage('deploy') { 
+        stage('deploy') {
+            when { branch "master" }
             steps { 
                 sh(script: 'docker run -d -p 3000:3000 appjs')
             }
